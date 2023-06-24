@@ -15,13 +15,14 @@ const Home = () => {
       setIsGenerating(true);
 
       console.log("Calling OpenAI...")
+      
       const response = await fetch('/api/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ userInput, recipient })
-      })
+      });
 
       const data = await response.json();
       console.log(data)
@@ -86,8 +87,8 @@ const Home = () => {
               </div>
             )}
             <div className="header-subtitle">
-              <h2>built by <a style={{textDecoration:'none', color:'rgba(255, 255, 255, 0.75)'}} href="https://www.twitter.com/paarugsethi" target='_blank'>@paarugsethi</a></h2>
-              <p><a style={{textDecoration:'none', color:'rgba(255, 255, 255, 0.75)'}} href="https://www.buymeacoffee.com/paarug" target='_blank'>buy me a coffee.</a></p>
+              <h2>built by <a style={{ textDecoration: 'none', color: 'rgba(255, 255, 255, 0.75)' }} href="https://www.twitter.com/paarugsethi" target='_blank'>@paarugsethi</a></h2>
+              <p><a style={{ textDecoration: 'none', color: 'rgba(255, 255, 255, 0.75)' }} href="https://www.buymeacoffee.com/paarug" target='_blank'>buy me a coffee.</a></p>
             </div>
           </div>
         </div>
